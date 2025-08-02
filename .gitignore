@@ -1,0 +1,11 @@
+# .gitignore
+*.pyc
+__pycache__/
+.env
+db.sqlite3
+media/
+static/
+venv/
+# Django stuff:
+*.log
+local_settings.py

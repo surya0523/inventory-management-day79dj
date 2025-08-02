@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Delete</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .confirm-box { border: 1px solid #dc3545; padding: 20px; border-radius: 5px; max-width: 400px; margin-top: 20px; }
+        .confirm-box p { margin-bottom: 15px; }
+        .confirm-box button { padding: 10px 15px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; }
+        .confirm-box button:hover { background-color: #c82333; }
+        .confirm-box a { text-decoration: none; padding: 10px 15px; border: 1px solid #6c757d; border-radius: 5px; color: #6c757d; }
+        .confirm-box a:hover { background-color: #e2e6ea; }
+    </style>
+</head>
+<body>
+    <h1>Confirm Delete</h1>
+    <div class="confirm-box">
+        <p>Are you sure you want to delete "{{ product.name }}"?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+            <a href="{% url 'product_detail' product.pk %}">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
